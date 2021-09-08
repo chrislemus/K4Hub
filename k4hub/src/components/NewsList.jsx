@@ -10,7 +10,8 @@ export default function NewsList() {
       newsList.push({
         id: randomId(),
         title: faker.lorem.words(8),
-        img: faker.image.imageUrl(300, 200, 'people', true),
+        desc: faker.lorem.words(20),
+        img: faker.image.imageUrl(550, 300, 'people', true),
       });
       itemCount--;
     }
@@ -21,5 +22,10 @@ export default function NewsList() {
     <NewsItem key={news.id} news={news} />
   ));
 
-  return <div>{renderedNews}</div>;
+  return (
+    <div className="news-list">
+      <h1>Community News</h1>
+      {renderedNews}
+    </div>
+  );
 }

@@ -1,0 +1,8 @@
+.news-item {
+  max-width: 550px;
+  &-image {
+    & img {
+      width: 100%;
+    }
+  }
+}
