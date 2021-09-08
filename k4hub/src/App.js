@@ -1,4 +1,5 @@
-import faker from 'faker';
+import NewsList from './components/NewsList';
+
 function App() {
   // const generateImages = (number) => {
   //   const images = [];
@@ -9,23 +10,11 @@ function App() {
   //   }
   //   return images;
   // };
-  const img = faker.image.image();
-  console.log(img);
+  // const imgs = [faker.image.people(), faker.image.people()];
+  // console.log(imgs);
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <NewsList />
     </div>
   );
 }
