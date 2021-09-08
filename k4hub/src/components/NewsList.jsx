@@ -20,6 +20,6 @@ export default function NewsList() {
   const renderedNews = getNews().map((news) => (
     <NewsItem key={news.id} news={news} />
   ));
-  console.log(getNews());
+
   return <div>{renderedNews}</div>;
 }
