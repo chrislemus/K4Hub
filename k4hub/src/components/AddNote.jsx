@@ -1,28 +1,33 @@
 import { useState } from 'react';
-import axios from 'axios';
+import { useMutation, useQueryClient } from 'react-query';
 import { createNote } from '../services';
 export default function AddNote() {
-  const [status, setStatus] = useState('idle');
+  const queryClient = useQueryClient();
   const [input, setInput] = useState('');
-  const handleSubmit = async (e) => {
-    setStatus('fetching');
-    e.preventDefault();
-    axios.post('http://localhost');
-    const date = new Date().toJSON();
-    createNote(input, date);
-    setStatus('idle');
-    setInput('');
-  };
+
+  const { mutate, status } = useMutation(
+    (e) => {
+      e.preventDefault();
+      const date = new Date().toJSON();
+      createNote(input, date);
+    },
+    {
+      onSuccess: () => {
+        queryClient.invalidateQueries('notes');
+        setInput('');
+      },
+    }
+  );
 
   return (
-    <form className="add-note-form" onSubmit={handleSubmit}>
+    <form className="add-note-form" onSubmit={mutate}>
       <label htmlFor="new-note-field">Add Note</label>
       <input
         id="new-note-field"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <input type="submit" disabled={status === 'fetching'} />
+      <input type="submit" disabled={status === 'loading'} />
     </form>
   );
 }
