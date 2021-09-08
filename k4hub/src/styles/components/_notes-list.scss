@@ -1,3 +1,5 @@
-.note-date {
-  font-size: 0.8rem;
+.notes-list {
+  & .note-item {
+    margin: 1rem 0;
+  }
 }

@@ -2,6 +2,7 @@ export default function NavPanel({ activeNav, navigate }) {
   const navItems = ['news', 'notes'];
   const renderedNavItems = navItems.map((item) => (
     <button
+      key={'nav-item' + item}
       className={`nav-item ${activeNav === item && 'is-active'}`}
       onClick={() => navigate(item)}
     >

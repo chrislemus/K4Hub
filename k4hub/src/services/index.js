@@ -1,11 +1,21 @@
 import axios from 'axios';
-const baseURL = 'http://localhost:3004/api';
+const baseURL = 'http://localhost:3004';
 
 export const axiosApi = axios.create({ baseURL });
 
-const fetchNotes = async (query, pageLimit, page) => {
-  const res = await axiosApi.get(
-    `/invoices?query=${query}&limit=${pageLimit}&page=${page}`
-  );
+export const fetchNotes = async () => {
+  const res = await axiosApi.get('/notes');
+  return res.data;
+};
+
+export const createNote = async (content, date) => {
+  const res = await axiosApi.post('/notes', {
+    content,
+    date,
+  });
+  return res.data;
+};
+export const deleteNote = async (id) => {
+  const res = await axiosApi.delete(`/notes/${id}`);
   return res.data;
 };

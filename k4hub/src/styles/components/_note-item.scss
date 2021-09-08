@@ -1,0 +1,17 @@
+.note-item {
+  position: relative;
+  &-date {
+    font-size: 0.9em;
+  }
+  &-delete-btn {
+    position: absolute;
+    border: none;
+    background: none;
+    color: $btn-color-error;
+    right: 0.5em;
+    bottom: 0.5em;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

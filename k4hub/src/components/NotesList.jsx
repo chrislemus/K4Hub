@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { format } from 'date-fns';
 import AddNote from './AddNote';
+import NoteItem from './NoteItem';
 
 export default function NotesList() {
   const [notesList, setNotesList] = useState([]);
@@ -14,13 +14,8 @@ export default function NotesList() {
     fetchData();
   }, []);
 
-  const renderedNotes = notesList.map(({ id, content, date }) => (
-    <div key={id} className="box">
-      <p>{content}</p>
-      <span className="note-date">
-        {format(new Date(date), 'MMM Lo	y - h:mmb')}
-      </span>
-    </div>
+  const renderedNotes = notesList.map((note) => (
+    <NoteItem key={note.id} note={note} />
   ));
 
   return (
