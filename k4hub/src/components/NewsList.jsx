@@ -22,10 +22,5 @@ export default function NewsList() {
     <NewsItem key={news.id} news={news} />
   ));
 
-  return (
-    <div className="news-list">
-      <h1>Community News</h1>
-      {renderedNews}
-    </div>
-  );
+  return <div className="news-list">{renderedNews}</div>;
 }

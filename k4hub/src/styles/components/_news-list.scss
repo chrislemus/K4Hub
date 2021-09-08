@@ -1,5 +1,8 @@
 .news-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   & .news-item {
-    margin: 1rem 0;
+    margin: 1rem 0.5rem;
   }
 }

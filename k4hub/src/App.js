@@ -8,7 +8,7 @@ function App() {
       <div className="content-wrapper">
         <NavPanel activeNav={activeNav} navigate={(nav) => setActiveNav(nav)} />
         <div className="content">
-          <NewsList />
+          <h1 className="content-header">Community News</h1>
           <NewsList />
         </div>
       </div>
