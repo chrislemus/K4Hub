@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <div className="header">
-      <div>K4Hub</div>
+      <h6>K4Hub</h6>
     </div>
   );
 }
