@@ -1,13 +1,16 @@
 import NewsList from './components/NewsList';
-import Header from './components/Header';
 import NavPanel from './components/NavPanel';
+import { useState } from 'react';
 function App() {
+  const [activeNav, setActiveNav] = useState('news');
   return (
     <div>
-      <Header />
-      <div className="content">
-        <NavPanel />
-        <NewsList />
+      <div className="content-wrapper">
+        <NavPanel activeNav={activeNav} navigate={(nav) => setActiveNav(nav)} />
+        <div className="content">
+          <NewsList />
+          <NewsList />
+        </div>
       </div>
     </div>
   );

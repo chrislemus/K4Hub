@@ -1,16 +1,49 @@
 .nav-panel {
   position: fixed;
-  border: 1px solid red;
   bottom: 0;
   width: 100%;
   display: flex;
+  background: $color-white;
   @include mq($lg) {
-    position: unset;
+    height: 100%;
     flex-direction: column;
-    max-width: 250px;
+    width: $nav-panel-lg-width;
   }
 }
 
 .nav-item {
   width: 100%;
+  margin: 0;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  transition: 0.5s;
+  &:hover {
+    cursor: pointer;
+  }
+  &.is-active {
+    color: $color-primary;
+    border-bottom: 3px solid $color-primary;
+    background: rgb(247, 247, 247);
+    font-weight: bold;
+    @include mq($lg) {
+      border-bottom: none;
+      border-left: 3px solid $color-primary;
+    }
+  }
+  @include mq($lg) {
+    margin: 0.5rem 0;
+  }
+}
+
+.nav-panel-header {
+  display: none;
+  @include mq($lg) {
+    display: flex;
+    font-weight: bold;
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+  }
 }

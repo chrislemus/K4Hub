@@ -1,7 +1,16 @@
-.content {
+.content-wrapper {
   display: flex;
   flex-direction: row;
-  // @include mq($lg) {
-  //   flex-direction: column;
-  // }
+  position: relative;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background: rgb(243, 243, 243);
+  width: 100%;
+  @include mq($lg) {
+    margin-left: $nav-panel-lg-width; // makes spacing for nav panel in large screens
+  }
 }
