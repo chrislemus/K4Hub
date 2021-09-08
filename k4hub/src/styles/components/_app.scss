@@ -1,0 +1,7 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  // @include mq($lg) {
+  //   flex-direction: column;
+  // }
+}

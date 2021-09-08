@@ -1,0 +1,16 @@
+.nav-panel {
+  position: fixed;
+  border: 1px solid red;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  @include mq($lg) {
+    position: unset;
+    flex-direction: column;
+    max-width: 250px;
+  }
+}
+
+.nav-item {
+  width: 100%;
+}
