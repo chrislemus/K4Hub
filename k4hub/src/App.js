@@ -14,19 +14,27 @@ const content = {
   },
 };
 
+export function QueryProvider({ children, ...rest }) {
+  const queryClient = new QueryClient();
+  return (
+    <QueryClientProvider client={queryClient} {...rest}>
+      {children}
+    </QueryClientProvider>
+  );
+}
+
 function App() {
   const [activeNav, setActiveNav] = useState('news');
   const { title, component: Component } = content[activeNav];
-  const queryClient = new QueryClient();
   return (
     <div className="content-wrapper">
-      <QueryClientProvider client={queryClient}>
+      <QueryProvider>
         <NavPanel activeNav={activeNav} navigate={(nav) => setActiveNav(nav)} />
         <div className="content">
           <h1 className="content-header">{title}</h1>
           <Component />
         </div>
-      </QueryClientProvider>
+      </QueryProvider>
     </div>
   );
 }

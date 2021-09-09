@@ -27,7 +27,9 @@ export default function AddNote() {
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
-      <input type="submit" disabled={status === 'loading'} />
+      <button type="submit" disabled={status === 'loading'}>
+        add note
+      </button>
     </form>
   );
 }
