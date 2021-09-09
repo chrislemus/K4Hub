@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# K4Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Content feed for K4Connect users
+>
+> - view community news
+> - store personal notes
 
-## Available Scripts
+**Table of Contents**
 
-In the project directory, you can run:
+- [K4Hub](#k4hub)
+  - [Technology Stack](#technology-stack)
+  - [Installation](#installation)
+  - [Plans for Production](#plans-for-production)
+  - [Though Process](#though-process)
 
-### `yarn start`
+## Technology Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+1. React
+2. SCSS
+3. React Query
+4. Testing Library
+5. Jest
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `yarn test`
+1. Download the repository
+2. Install dependencies `npm install`
+3. Open two terminals to run `App` and `Server`
+   - Terminal 1 - Run JSON-Server `npm run dev-server`
+   - Terminal 2 - Run App `npm start`
+4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser
+5. Server end-point [http://localhost:3004](http://localhost:3004)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Plans for Production
 
-### `yarn build`
+1. Use Redux for state management and extract logic from components
+2. Set up server and database
+3. Add authentication
+4. Plan all features for app
+5. Set a design/structure
+6. Use React Router or NextJS
+7. Use TypeScript
+8. Create user stories
+9. Complete unit, integration, functional, and E2E tests for all completed features and components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Though Process
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> Questions and assumptions that came up while working on project
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Should I use styling framework or pure CSS?
 
-### `yarn eject`
+- Pure CSS to showcase skills and smaller bundle size.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2. One page or multiple pages?
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- One page(KSS), and create logic for navigating between `news` and `notes` in component.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3. Types of testing.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Requirements mention unit testing. But Testing Library would be a great implementation for functional testing, specially for the user demographic.
 
-## Learn More
+4. How can I make app performant when fetching server?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Use `useQuery` to cache data.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Should I use Redux?
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Too much boilerplate, and no project design or structure given. It might be better treat this as prototype and handle the logic within the components. Logic can later be extracted to reduce coupling.
